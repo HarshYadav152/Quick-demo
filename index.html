@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wallpaper Preview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        
+        h2 {
+            color: #333;
+        }
+        
+        .preview-container {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .preview-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .preview-button:hover {
+            background-color: #45a049;
+        }
+        
+        .tip {
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Wallpaper Preview</h2>
+    
+    <div class="preview-container">
+        <img src="OIP.webp" alt="Wallpaper Preview" id="preview-image">
+    </div>
+    
+    <button class="preview-button" onclick="openFullscreen();">View in Fullscreen</button>
+    
+    <p class="tip"><strong>Tip:</strong> Press the "Esc" key to exit fullscreen.</p>
+
+    <script>
+        /* Get the element you want displayed in fullscreen */ 
+        var elem = document.getElementById("preview-image");
+
+        /* Function to open fullscreen mode */
+        function openFullscreen() {
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+        }
+    </script>
+
+</body>
+</html>
